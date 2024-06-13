@@ -21,34 +21,31 @@
 <?php
 
 $T= $_GET["Tempo"];
-$nomeo= $_GET["Nome"];
+$nome= $_GET["Nome"];
 $S= $_GET["Sal"];
-
+$Cal= ($S*0.25) + $S;
+$Cal0= ($S*0.20) + $S + 100;
 if($S <= 500 && $T < 1){
-    $Cal= ($S*0.25) + $S;
     echo"\n\n Olá {$nome}, o seu reajutre séra de $Cal";
     echo"<br><br>Por enquanto você não terá direito ao bônus!";
 
-    ifelse(($S > 500  && $S <= 1000) && ($T >= 1 && $T <= 3)){
-    $Cal= ($S*0.20) + $S + 100};
+}ifelse(($S > 500  && $S <= 1000) && ($T >= 1 && $T <= 3)){
+    echo"\n\n Olá {$nome}, o seu reajutre séra de $Cal";
+    echo"<br><br>Parabéns! O valor do bônus acrecentado: $Cal0";
+
+}ifelse(($S > 1000  && $S <= 1500) && ($T >= 4 && $T <= 6)){
+    $Cal= ($S*0.15) + $S + 200;
     echo"\n\n Olá {$nome}, o seu reajutre séra de $Cal";
     echo"<br><br>Parabéns! O valor do bônus acrecentado: $Cal";
 
-    ifelse(($S > 1000  && $S <= 1500) && ($T >= 4 && $T <= 6)){
-    $Cal= ($S*0.15) + $S + 200};
+}ifelse(($S > 1500 && $S <= 2000) && ($T >= 7 && $T <= 10)){
+    $Cal= (($S*0.15) + $S + 300);
     echo"\n\n Olá {$nome}, o seu reajutre séra de $Cal";
     echo"<br><br>Parabéns! O valor do bônus acrecentado: $Cal";
 
-    ifelse(($S > 1500 && $S <= 2000) && ($T >= 7 && $T <= 10)){
-    $Cal= ($S*0.15) + $S + 300};
-    echo"\n\n Olá {$nome}, o seu reajutre séra de $Cal";
-    echo"<br><br>Parabéns! O valor do bônus acrecentado: $Cal";
-
-    ifelse($S > 2000 && $T > 10){
-    $Cal= $S + 500};
+}else($S > 2000 && $T > 10){
+    $Cal= $S + 500;
     echo"\n\n Olá {$nome}, você não tem direito a reajustre!";
     echo"<br><br>Parabéns! O valor do bônus acrecentado: $Cal";
-
-      
-
+};
 ?>
